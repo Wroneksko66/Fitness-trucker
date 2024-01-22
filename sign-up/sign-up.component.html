@@ -1,0 +1,64 @@
+<section class="container">
+  <form class="example-form" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <mat-form-field class="example-full-width">
+      <mat-label>Pass Login</mat-label>
+      <input
+        matInput
+        placeholder="Login"
+        name="Login"
+        ngModel
+        required
+        #loginInput="ngModel">
+      <mat-error *ngIf="loginInput.hasError('required')">This fill is required</mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Pass Email</mat-label>
+      <input
+        matInput
+        type="email"
+        placeholder="Mail"
+        name="mail"
+        ngModel
+        required
+        minlength="6"
+        #mailInput="ngModel">
+      #passwordInput="ngModel">
+      <mat-error *ngIf="mailInput.hasError('required')">This fill is required</mat-error>
+      <mat-error *ngIf="!mailInput.hasError('required')"> You must use min 6 characters</mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Pass Password</mat-label>
+      <input
+        matInput
+        type="password"
+        placeholder="Password"
+        name="password"
+        ngModel
+        required
+        #passwordInput="ngModel">
+      <mat-error *ngIf="passwordInput.hasError('required')">This fill is required</mat-error>
+      <mat-error *ngIf="!passwordInput.hasError('required')"> You must use min 6 characters</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Choose a date</mat-label>
+      <input matInput
+             [matDatepicker]="picker"
+             [max]="maxDate"
+             ngModel
+             name="birthDate"
+             required
+      >
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-checkbox
+      name="agree"
+      color="primary"
+       >Agree to Terms and Conditions
+    </mat-checkbox>
+    <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Submit</button>
+  </form>
+
+</section>
+
