@@ -1,0 +1,17 @@
+import {Component, EventEmitter, Inject, Output} from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+
+@Component({
+  selector: 'app-stop-training',
+  templateUrl: './stop-training.component.html',
+  styleUrls: ['./stop-training.component.scss']
+})
+export class StopTrainingComponent {
+
+
+  constructor( @Inject(MAT_DIALOG_DATA) public passedData:any ) {
+
+  }
+
+
+}

@@ -1,0 +1,22 @@
+<section class="new-training" fxLayout fxLayoutAlign="center">
+  <form (ngSubmit)="starExercise(f)" #f="ngForm">
+    <mat-card fxFlex.xs="100%" fxFlex="400px">
+      <mat-card-title fxLayoutAlign="center">
+        Time to start Workout
+      </mat-card-title>
+      <mat-card-content fxLayoutAlign="center" fxLayout="column">
+        <mat-form-field  >
+          <mat-select placeholder="Choose exercise"  ngModel name="exercise" required >
+            <mat-option *ngFor="let exercise of exercises" [value]=exercise.id >
+              {{ exercise.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-card-actions fxLayoutAlign="center">
+          <button mat-button type="submit"[disabled]="f.invalid" >Start</button>
+        </mat-card-actions>
+      </mat-card-content>
+
+    </mat-card>
+  </form>
+</section>

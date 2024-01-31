@@ -1,0 +1,16 @@
+.new-training{
+  padding: 30px;
+}
+mat-form-field{
+  width: 195px;
+  transform: translate(54px , 20px);
+}
+mat-card {
+  padding: 20px 30px;
+}
+
+@media screen  and (max-width: 600px){
+  mat-form-field{
+    width: 50%;
+  }
+}

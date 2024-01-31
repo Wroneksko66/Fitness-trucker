@@ -1,0 +1,24 @@
+<mat-toolbar color="primary" class="tool-bar">
+  <div class="logoHamburger">
+    <div  fxHide.gt-xs>
+      <button (click)="onToggleSideNav()" mat-icon-button color="primary"
+              aria-label="Example icon button with a home icon">
+        <span class="hamburger">
+           <mat-icon> menu</mat-icon>
+        </span>
+
+      </button>
+    </div>
+
+    <a class="link" routerLink="/">LOGO</a>
+  </div>
+  <div fxHide.xs>
+    <ul class="list">
+      <li class="item"><a class="link" routerLink="/login" *ngIf="!isAuth">Login</a></li>
+      <li class="item"><a class="link" routerLink="/sign-up" *ngIf ="!isAuth">Sign Up</a></li>
+      <li class="item"><a class="link" routerLink="/training" *ngIf="isAuth">Training</a></li>
+      <li class="item"><a class="link" (click)="logout()" style="cursor: pointer" *ngIf="isAuth">Logout</a></li>
+    </ul>
+  </div>
+
+</mat-toolbar>

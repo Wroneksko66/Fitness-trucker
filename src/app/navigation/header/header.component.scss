@@ -1,0 +1,53 @@
+.tool-bar {
+  display: flex;
+  justify-content: space-between;
+
+  .logoHamburger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hamburger {
+    color: white;
+  }
+
+  .list {
+    display: flex;
+
+  }
+
+  .item {
+    margin: 10px;
+    list-style: none;
+  }
+
+  .link {
+    text-decoration: none;
+    margin-left: 10px;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .link:hover,
+  .link:active {
+    color: lightgrey;
+  }
+
+  .link--nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+}
+
+@media only screen and (min-width: 600px) {
+
+  .hideMenu {
+    display: none;
+  }
+
+}
